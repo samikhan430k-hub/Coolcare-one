@@ -1,0 +1,10 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/", "destination": "/coolcare_qatar_premium_hvac_services/code.html" },
+    { "source": "/services", "destination": "/our_services_hvac_solutions_in_qatar/code.html" },
+    { "source": "/contact", "destination": "/contact_us_coolcare_qatar_support/code.html" },
+    { "source": "/faq", "destination": "/faq_help_center_professional_hvac_support/code.html" }
+  ]
+}
