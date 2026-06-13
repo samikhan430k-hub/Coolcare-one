@@ -235,11 +235,11 @@
     <nav class="fixed top-0 w-full z-50 glass-panel border-b border-outline-variant/30 shadow-sm transition-all duration-300 h-20 flex items-center" id="navbar">
         <div class="flex justify-between items-center px-6 md:px-[28px] lg:px-8 w-full">
             <!-- Brand Logo -->
-            <a class="flex items-center gap-3 group transition-transform duration-300 hover:scale-102" href="../coolcare_qatar_premium_hvac_services/code.html">
-                <div class="flex items-center justify-center p-1.5 md:p-0 bg-white/95 backdrop-blur-md rounded-2xl md:bg-transparent md:backdrop-blur-none shadow-sm md:shadow-none border border-slate-100/50 md:border-transparent transition-all duration-300">
-                    <img src="../assets/logo.png" class="h-[55px] sm:h-[60px] md:h-[72px] w-auto object-contain transition-all duration-300" alt="CoolCare Qatar Logo" id="nav-logo"/>
+            <a class="flex items-center gap-2 md:gap-3 group transition-transform duration-300 hover:scale-102" href="../coolcare_qatar_premium_hvac_services/code.html">
+                <div id="nav-logo-container" class="flex items-center justify-center p-1 md:p-0 bg-white/95 backdrop-blur-md rounded-[14px] md:bg-transparent md:backdrop-blur-none shadow-sm md:shadow-none border border-slate-100/50 md:border-transparent transition-all duration-300">
+                    <img src="../assets/logo.png" class="h-9 sm:h-10 md:h-[72px] w-auto object-contain transition-all duration-300" alt="CoolCare Qatar Logo" id="nav-logo"/>
                 </div>
-                <span class="font-montserrat font-bold text-lg md:text-xl text-primary tracking-tight transition-colors duration-300 group-hover:text-secondary">CoolCare Qatar</span>
+                <span class="font-montserrat font-bold text-[17px] sm:text-lg md:text-xl text-primary tracking-tight transition-colors duration-300 group-hover:text-secondary">CoolCare Qatar</span>
             </a>
             
             <!-- Desktop Navigation Links -->
@@ -940,16 +940,23 @@
         const navbar = document.getElementById('navbar');
         const navLogo = document.getElementById('nav-logo');
         window.addEventListener('scroll', () => {
+            const navLogoContainer = document.getElementById('nav-logo-container');
             if (window.scrollY > 50) {
                 navbar.classList.remove('h-20');
                 navbar.classList.add('h-16');
-                navLogo.classList.remove('h-[60px]', 'md:h-[72px]');
-                navLogo.classList.add('h-10', 'md:h-12');
+                navLogo.className = 'h-8 md:h-12 w-auto object-contain transition-all duration-300';
+                if (navLogoContainer) {
+                    navLogoContainer.classList.remove('p-1');
+                    navLogoContainer.classList.add('p-0.5');
+                }
             } else {
                 navbar.classList.remove('h-16');
                 navbar.classList.add('h-20');
-                navLogo.classList.remove('h-10', 'md:h-12');
-                navLogo.classList.add('h-[60px]', 'md:h-[72px]');
+                navLogo.className = 'h-9 sm:h-10 md:h-[72px] w-auto object-contain transition-all duration-300';
+                if (navLogoContainer) {
+                    navLogoContainer.classList.remove('p-0.5');
+                    navLogoContainer.classList.add('p-1');
+                }
             }
         });
 
